@@ -21,7 +21,7 @@
         <div class="card-body">
             <div class="card-text">{{post.text}}</div>
             <br />
-            <div class="collapsed" id="comments-{{post.id}}">
+            <div class="collapse" id="comments-{{post.id}}">
                 <div class="card">
                     <div class="card-body" id="comments-expanded-{{post.id}}">
                         {% for comment in post.comments %}
@@ -39,11 +39,11 @@
             </div>
             <p class="card-text">
                 {% if post.comments|length > 0 %}
-                <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
-                <small>View {{ post.comments|length }} Comments</small>
-                </a>
+                    <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
+                    <small>View {{ post.comments|length }} Comments</small>
+                    </a>
                 {% else %}
-                <small class="text-muted">No comments</small>
+                    <small class="text-muted">No comments</small>
                 {% endif %}
             </p> 
             <form class="input-group mb-3" method='POST' action='/create-comment/{{post.id}}'>
